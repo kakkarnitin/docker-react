@@ -1,0 +1,15 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+
+# run docker container and map external volume for the source files
+# in below command first -v is to map container node_modules to itself
+# docker run -it -p 3000:3000 -v /app/node_modules -v ${pwd}:/app 696bd7c54dbaf0e085654cce5fb1a6192ec6a19d9b573181ebd538c3750f0498
