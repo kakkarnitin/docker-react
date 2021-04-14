@@ -6,4 +6,4 @@ before_install:
 
 script:
   - docker run -e CI=true kakkarnit/docker-react npm run test -- --coverage
-  
+#test comment
